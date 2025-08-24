@@ -34,4 +34,28 @@ export default function HostNewEvent() {
               <input type="number" placeholder="30000" className="mt-2 w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900" />
             </div>
             <div>
-              <label className="text-sm font-semibol
+              <label className="text-sm font-semibold">Capacity</label>
+              <input type="number" placeholder="20" className="mt-2 w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="text-sm font-semibold">Date</label>
+              <input type="date" className="mt-2 w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900" />
+            </div>
+            <div>
+              <label className="text-sm font-semibold">Time</label>
+              <input type="time" className="mt-2 w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900" />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-sm font-semibold">Location</label>
+            <input type="text" placeholder="Address or meeting point" className="mt-2 w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900" />
+          </div>
+        </form>
+      </main>
+    </div>
+  )
+}
