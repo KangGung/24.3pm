@@ -10,16 +10,20 @@ export default function HomeScreen({ events, onSelect }: { events: EventItem[]; 
   const upcoming = events.slice(0,3)
 
   return (
-    <div className="mx-auto max-w-md">
-      {/* Header */}
-      <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-100">
-        <div className="mx-auto max-w-md px-4 py-3 flex items-center justify-between">
-          <h1 className="text-xl font-extrabold tracking-tight">Local Korea</h1>
-          <button aria-label="Search" className="p-2 rounded-xl hover:bg-neutral-100 active:scale-95">
-            <SearchIcon className="h-5 w-5" />
-          </button>
-        </div>
-        {/* Search row */}
+ <div className="mx-auto max-w-md">
+  {/* Header */}
+  <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-100">
+    <div className="mx-auto max-w-md px-4 py-3 flex items-center justify-between">
+      <h1 className="text-xl font-extrabold tracking-tight">Local Korea</h1>
+      <a
+        href="/login"
+        className="px-3 py-1.5 rounded-xl bg-neutral-900 text-white text-xs active:scale-95"
+      >
+        Profile
+      </a>
+    </div>
+    {/* Search row */}
+
         <div className="mx-auto max-w-md px-4 pb-3">
           <div className="flex items-center gap-2">
             <div className="flex-1 flex items-center gap-2 bg-neutral-100 rounded-2xl px-3 py-2">
