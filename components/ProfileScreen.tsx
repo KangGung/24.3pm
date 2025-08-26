@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabaseClient'
+import { supabase } from '../lib/supabaseClient' // components → lib
 
 type SUser = {
   id: string
@@ -19,7 +19,7 @@ export default function ProfileScreen() {
     ;(async () => {
       const { data: { user } } = await supabase.auth.getUser()
       if (!mounted) return
-      setUser(user as any ?? null)
+      setUser((user as any) ?? null)
       setLoading(false)
     })()
     return () => { mounted = false }
@@ -28,7 +28,7 @@ export default function ProfileScreen() {
   const signOut = async () => {
     await supabase.auth.signOut()
     const { data: { user } } = await supabase.auth.getUser()
-    setUser(user as any ?? null)
+    setUser((user as any) ?? null)
   }
 
   if (loading) {
@@ -97,13 +97,11 @@ export default function ProfileScreen() {
         </div>
       </section>
 
-      {/* My Bookings (placeholder for B step) */}
       <section className="rounded-2xl border border-neutral-200 p-4">
         <h2 className="text-sm font-semibold mb-2">My Bookings</h2>
         <p className="text-sm text-neutral-500">No bookings yet.</p>
       </section>
 
-      {/* Favorites (optional) */}
       <section className="rounded-2xl border border-neutral-200 p-4">
         <h2 className="text-sm font-semibold mb-2">Favorites</h2>
         <p className="text-sm text-neutral-500">Save events you like from the Home screen (coming soon).</p>
@@ -111,3 +109,4 @@ export default function ProfileScreen() {
     </div>
   )
 }
+
