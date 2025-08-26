@@ -1,5 +1,6 @@
 'use client'
 
+import { supabase } from '../lib/supabaseClient'
 import Image from 'next/image'
 import { ArrowLeft } from 'lucide-react'
 import type { EventItem } from './types'
