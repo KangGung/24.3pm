@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabaseClient' // components → lib
+import { supabase } from '../lib/supabaseClient'
 
 type SUser = {
   id: string
@@ -29,6 +29,7 @@ export default function ProfileScreen() {
     await supabase.auth.signOut()
     const { data: { user } } = await supabase.auth.getUser()
     setUser((user as any) ?? null)
+    // optional: window.location.href = '/'
   }
 
   if (loading) {
@@ -97,16 +98,13 @@ export default function ProfileScreen() {
         </div>
       </section>
 
+      {/* Coming soon */}
       <section className="rounded-2xl border border-neutral-200 p-4">
         <h2 className="text-sm font-semibold mb-2">My Bookings</h2>
         <p className="text-sm text-neutral-500">No bookings yet.</p>
       </section>
-
-      <section className="rounded-2xl border border-neutral-200 p-4">
-        <h2 className="text-sm font-semibold mb-2">Favorites</h2>
-        <p className="text-sm text-neutral-500">Save events you like from the Home screen (coming soon).</p>
-      </section>
     </div>
   )
 }
+
 
