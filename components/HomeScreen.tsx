@@ -13,15 +13,15 @@ export default function HomeScreen({ events, onSelect }: { events: EventItem[]; 
  <div className="mx-auto max-w-md">
   {/* Header */}
   <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-100">
-    <div className="mx-auto max-w-md px-4 py-3 flex items-center justify-between">
-      <h1 className="text-xl font-extrabold tracking-tight">Local Korea</h1>
-      <a
-        href="/login"
-        className="px-3 py-1.5 rounded-xl bg-neutral-900 text-white text-xs active:scale-95"
-      >
-        Profile
-      </a>
-    </div>
+   <div className="mx-auto max-w-md px-4 py-3 flex items-center justify-between">
+  <h1 className="text-xl font-extrabold tracking-tight">Local Korea</h1>
+  <a
+    href="/profile"
+    className="px-3 py-1.5 rounded-xl bg-neutral-900 text-white text-xs active:scale-95"
+  >
+    Profile
+  </a>
+</div>
     {/* Search row */}
 
         <div className="mx-auto max-w-md px-4 pb-3">
