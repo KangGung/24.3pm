@@ -77,16 +77,27 @@ export default function EventDetail({ event, onBack }: { event: EventItem | null
         </section>
 
         <section className="sticky bottom-0 inset-x-0 bg-white/90 backdrop-blur pt-3 pb-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs text-neutral-500">From</p>
-              <p className="text-lg font-extrabold">₩{data.priceKRW.toLocaleString()}</p>
-            </div>
-            <button className="px-5 py-3 rounded-2xl bg-neutral-900 text-white font-semibold active:scale-95">
-              Book now
-            </button>
-          </div>
-        </section>
+  <div className="flex items-center justify-between">
+    <div>
+      <p className="text-xs text-neutral-500">From</p>
+      <p className="text-lg font-extrabold">₩{data.priceKRW.toLocaleString()}</p>
+    </div>
+    <button
+      onClick={async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (!user) {
+          window.location.href = '/login'
+          return
+        }
+        alert('Logged in ✔️ — booking flow coming next.')
+      }}
+      className="px-5 py-3 rounded-2xl bg-neutral-900 text-white font-semibold active:scale-95"
+    >
+      Book now
+    </button>
+  </div>
+</section>
+
       </main>
     </div>
   )
