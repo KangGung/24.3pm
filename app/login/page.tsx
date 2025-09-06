@@ -2,7 +2,7 @@
 
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
-import { supabase } from '../../lib/supabaseClient' // <= RELATIVE path (no tsconfig paths needed)
+import { supabase } from '../../lib/supabaseClient'
 
 export default function LoginPage() {
   return (
@@ -12,15 +12,14 @@ export default function LoginPage() {
         <Auth
           supabaseClient={supabase}
           view="sign_in"
-          providers={['google']} // remove if you didn't enable Google yet
+          providers={['google']} // remove if you didn't enable Google
           appearance={{
             theme: ThemeSupa,
             variables: { default: { colors: { brand: '#111111', brandAccent: '#111111' } } }
           }}
-          redirectTo={typeof window !== 'undefined' ? window.location.origin : undefined}
+          redirectTo={typeof window !== 'undefined' ? `${window.location.origin}/profile` : undefined}
         />
       </div>
     </div>
   )
 }
-
